@@ -1,121 +1,90 @@
-# 📱 Project: Beyond Blink Mobile App
+# Beyond Blink: Mobile App Project
 
-## 📋 Project Overview
-**Goal:** Convert "Beyond Blink" Figma/Canva designs into a Flutter Frontend APK.
-**Stack:** Flutter (Dart), GoRouter, Google Fonts.
-**Constraint:** No API, No Database. Frontend UI/UX focus only.
-
----
-
-## ⚡ Quick Start (For Developers)
-
-**1. Clone & Install**
-```bash
-git clone [https://github.com/iyawnnn/Beyond-Blink.git](https://github.com/iyawnnn/Beyond-Blink.git)
-cd Beyond-Blink
-flutter pub get
-```
-
-**2. Run App**
-flutter run
-
-## Phase 2: Architecture & Dependencies
-
-To ensure the code is clean and scalable, we will use a **Feature-Based Folder Structure**.
-
-### 1. Folder Structure
-```text
-lib/
-├── core/
-│   ├── assets/              # Asset paths
-│   ├── themes/               # AppColors, TextStyles (The Navy Blue Theme)
-│   └── constants/      # Strings
-├── router/
-│   └── app_router.dart      # Navigation Logic (GoRouter)
-├── features/
-│   ├── auth/                # Login Screen
-│   ├── dashboard/           # Home Screen with Horizontal Scroll
-│   ├── cart/                # Cart List
-│   ├── profile/             # User Profile
-│   └── splash/              # Initial Loading Screen
-└── main.dart
-```
-
-### 2. Key Libraries (Add these to pubspec.yaml)
-* **`go_router`**: For handling navigation and routing (Best Practice).
-* **`google_nav_bar`** (or `flutter_svg`): For the bottom navigation icons.
-* **`google_fonts`**: To match the typography in your design.
+## Project Overview
+**Goal:** Convert "Beyond Blink" designs into a Flutter APK.
+**Stack:** Flutter, GoRouter, Google Fonts (Poppins).
+**Status:** Project Setup Complete. Ready for feature development.
 
 ---
 
-## Phase 3: Navigation & Linking Strategy
+## Quick Start (For Developers)
 
-We will use a **Shell Route** approach. The Bottom Navbar will persist while the pages inside change.
+1. Get the Code
+   git clone https://github.com/iyawnnn/Beyond-Blink.git
+   cd Beyond-Blink
+   flutter pub get
 
-### Route Definitions
-
-**1. Splash Screen**
-* **Path:** `/`
-* **Parent:** None (Stand-alone)
-* **Logic:** Checks "fake" loading delay, then redirects to Login.
-
-**2. Login Screen**
-* **Path:** `/login`
-* **Parent:** None (Stand-alone)
-* **Logic:** Full screen. Clicking "Login" redirects to `/home`.
-
-**3. Dashboard (Home)**
-* **Path:** `/home`
-* **Parent:** Shell (Inside Navbar)
-* **Tab Index:** 0
-* **Logic:** Displays the main horizontal lists (Sun Glasses, Frames).
-
-**4. Cart Page**
-* **Path:** `/cart`
-* **Parent:** Shell (Inside Navbar)
-* **Tab Index:** 1
-* **Logic:** Displays selected items and a checkout button.
-
-**5. Profile Page**
-* **Path:** `/profile`
-* **Parent:** Shell (Inside Navbar)
-* **Tab Index:** 2
-* **Logic:** Displays user details and "Log Out" (which goes back to `/login`).
+2. Run the App
+   flutter run
 
 ---
 
-## Phase 4: Collaboration & Task Split
+## Architecture & File Map
 
-**Do not push to `main` directly.** Create branches for your features.
+The project uses a Feature-First structure. Please respect these locations:
 
-### Teammate's Tasks (Branch: `feature/auth-profile`)
-1.  **Login Page:**
-    * Implement the layout from `2.png`.
-    * Create the Input Fields and "Login" button.
-    * **Action:** Clicking Login redirects to `/home`.
-2.  **Profile Page:**
-    * Implement layout from `6.png`.
-    * List the buttons (Edit Profile, Log out, etc.).
-    * **Action:** Clicking "Log out" redirects to `/login`.
+### lib/core/ (Shared Resources)
+* themes/: Contains app_colors.dart (Navy Blue palette) and app_theme.dart (Poppins font settings).
+  * Usage: Colors are applied automatically via Theme.of(context).
+* assets/: (Future) Place all images here.
 
-### Your Tasks (Branch: `feature/dashboard-nav`)
-1.  **Navigation Setup:**
-    * Set up `go_router` and the `Scaffold` with the Bottom Navigation Bar.
-2.  **Dashboard (Home):**
-    * Implement layout from `3.png` and `4.png`.
-    * Create the Horizontal Category Scroll (Sun Glasses, Style Frames).
-    * Create the Vertical "Popular" list.
-3.  **Cart Page:**
-    * Implement layout from `5.png`.
-    * Static list of items with a "Checkout" button.
+### lib/features/ (The Screens)
+Each feature has its own folder. Work only in your assigned folder.
+* auth/: Login Screen logic.
+* dashboard/: Home & Items List logic.
+* profile/: User Profile logic.
+* cart/: Cart & Checkout logic.
+* splash/: Initial loading screen.
+
+### lib/router/ (Navigation)
+* app_router.dart: Controls all navigation paths.
+  * Usage: Use context.go('/login') or context.go('/dashboard') to navigate.
 
 ---
 
-## Checklist for Submission
-- [ ] Splash Screen (3 seconds delay).
-- [ ] Login Screen (Static validation).
-- [ ] Dashboard (Scrollable lists).
-- [ ] Profile Page.
-- [ ] Cart Page.
-- [ ] Build APK (`flutter build apk`).
-- [ ] Record Screen interaction.
+## Route Cheat Sheet
+
+| Screen | Route Path | Status |
+| :--- | :--- | :--- |
+| Splash | / | Wiring Complete |
+| Login | /login | Wiring Complete |
+| Dashboard | /dashboard | Wiring Complete |
+| Items List | /dashboard/items | Wiring Complete |
+| Profile | /profile | Wiring Complete |
+| Cart | /cart | Wiring Complete |
+
+---
+
+## Task Assignments
+
+**Branch: feature/teammate-tasks (Teammate)**
+1. Login Page (features/auth):
+   * Build UI based on design 2.png.
+   * Link "Login" button to /dashboard.
+2. Profile Page (features/profile):
+   * Build UI based on design 6.png.
+   * Link "Log Out" button to /login.
+3. Cart Page (features/cart):
+   * Build UI based on design 5.png.
+4. Splash Screen (features/splash):
+   * Implement 3-second delay and logo.
+
+**Branch: feature/dashboard-nav (Lead)**
+1. Dashboard (features/dashboard):
+   * Build UI based on design 3.png & 4.png.
+   * Implement Horizontal Category Scroll.
+   * Implement Vertical Popular List.
+2. Items List (features/dashboard):
+   * Create the "View All" items page.
+3. Navigation Bar (router):
+   * Finalize the Bottom Navigation Bar UI and routing logic.
+
+---
+
+## Submission Checklist
+- [x] Phase 1: Project Setup & Architecture (Completed)
+- [ ] Login Screen UI
+- [ ] Dashboard Screen UI
+- [ ] Profile Screen UI
+- [ ] Cart Screen UI
+- [ ] Final Build: Generate APK

@@ -1,109 +1,72 @@
-## Overview
-**Goal:** Ensure smooth teamwork without code conflicts or lost work.
-
-**Role:** Teammate / Developer
+# Collaboration & Git Workflow
 
 **Repository:** https://github.com/iyawnnn/Beyond-Blink.git
 
----
-
-## Step 1: Initial Setup (Do Once)
-
-**1. Clone the Repository:**
-* Open your terminal/command prompt.
-* Run the following command to download the project:
-    ```bash
-    git clone https://github.com/iyawnnn/Beyond-Blink.git
-    cd Beyond-Blink
-    ```
-
-**2. Install Dependencies:**
-* Download the required libraries (`go_router`, `google_nav_bar`, etc.):
-    ```bash
-    flutter pub get
-    ```
-
-**3. Verify Setup:**
-* Run the app to ensure it works on your machine:
-    ```bash
-    flutter run
-    ```
+**Role:** Developer Guide
 
 ---
 
-## Step 2: The Golden Rules
-
+## The Golden Rules
 To avoid breaking the project, you must strictly follow these rules:
 
-1.  **NEVER push directly to `main`:** The `main` branch is for final, working code only.
-2.  **ALWAYS create a new branch:** Never code on the default branch.
-3.  **ALWAYS pull before starting:** Ensure you have the latest code before you start working to avoid conflicts.
+1. NEVER push directly to main.
+2. ALWAYS create a new branch before coding.
+3. ALWAYS pull main before you start your day.
 
 ---
 
-## Step 3: Daily Workflow Cycle
+## Daily Workflow Cycle (Repeat This)
 
-Follow this exact cycle every time you work on a feature.
+Every time you sit down to code, follow this exact cycle:
 
-### 1. Start Fresh
-Before you start coding, get the latest updates from the team:
+### 1. Update Your Code (Start Fresh)
+Before writing a single line of code, get the latest updates:
 ```bash
-git checkout main
-git pull origin main
+   git checkout main
+   git pull origin main
 ```
 
 ### 2. Create Your Branch
-Create a specific branch for your task (Authentication & Profile):
+* Teammate: git checkout -b feature/teammate-tasks
+* Lead: git checkout -b feature/dashboard-nav
 
+### 3. Code & Save
+Work on your assigned files in lib/features/. When ready to save:
 ```bash
-# Command: git checkout -b <branch_name>
-git checkout -b feature/auth-profile
+   git add .
+   git commit -m "feat: Built login input fields"
 ```
 
-### 3. Code and Commit
+### 4. Upload to GitHub
 ```bash
-# Add all changed files
-git add .
-
-# Save with a message (Be descriptive!)
-git commit -m "Added login screen UI and input fields"
+   git push origin <your-branch-name>
 ```
 
-### 4. Upload (Push)
-Send your branch to GitHub:
-```bash
-# Command: git push origin <branch_name>
-git push origin feature/auth-profile
-```
+---
 
-## Specific Task & Branch Guide
-**Your Branch Name:** `feature/auth-profile`
+## Where to work?
 
-### Teammate's Focus Areas
-You will be working in these specific directories. Do not touch other folders to avoid conflicts.
+### Teammate (feature/teammate-tasks)
+You own these files. You can edit them freely:
+* lib/features/auth/login_screen.dart
+* lib/features/profile/profile_screen.dart
+* lib/features/cart/cart_screen.dart
+* lib/features/splash/splash_screen.dart
 
-**1. Login Logic:**
-* **File:** `lib/features/auth/login_screen.dart`
-* **Asset:** `assets/images/logo_blue_text.png`
-* **Action:** When user clicks Login -> Navigate to `/home`.
-
-**2. Profile Logic:**
-* **File:** `lib/features/profile/profile_screen.dart`
-* **Asset:** `assets/images/profile_user.png`
-* **Action:** When user clicks Log Out -> Navigate to `/login`.
+### Lead (feature/dashboard-nav)
+You own these files:
+* lib/features/dashboard/
+* lib/router/app_router.dart
 
 ---
 
 ## Troubleshooting
 
 **"I have a merge conflict!"**
-1.  Don't panic.
-2.  VS Code will highlight the conflicting lines in red.
-3.  Choose "Accept Current Change" or "Accept Incoming Change" based on which code is correct.
-4.  Save the file, `git add .`, and `git commit`.
+1. Don't panic. VS Code will highlight the conflicting lines in red.
+2. Click "Accept Incoming Change" (if their code is newer) or "Accept Current Change" (if yours is better).
+3. Save, git add ., and git commit.
 
 **"The app won't run after I pulled!"**
-Sometimes new libraries are added. Always run:
-
-```bash
-flutter pub get
+Sometimes new packages are added. Always run:
+   flutter pub get
