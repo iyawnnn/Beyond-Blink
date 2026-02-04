@@ -2,7 +2,9 @@
 
 ## Project Overview
 **Goal:** Convert "Beyond Blink" designs into a Flutter APK.
+
 **Stack:** Flutter, GoRouter, Google Fonts (Poppins).
+
 **Status:** Project Setup Complete. Ready for feature development.
 
 ---
