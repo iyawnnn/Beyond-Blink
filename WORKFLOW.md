@@ -50,13 +50,13 @@ Work on your assigned files in lib/features/. When ready to save:
 You own these files. You can edit them freely:
 * lib/features/auth/login_screen.dart
 * lib/features/profile/profile_screen.dart
-* lib/features/cart/cart_screen.dart
 * lib/features/splash/splash_screen.dart
 
 ### Lead (feature/dashboard-nav)
 You own these files:
 * lib/features/dashboard/
 * lib/router/app_router.dart
+* lib/features/cart/cart_screen.dart
 
 ---
 

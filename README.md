@@ -2,9 +2,7 @@
 
 ## Project Overview
 **Goal:** Convert "Beyond Blink" designs into a Flutter APK.
-
 **Stack:** Flutter, GoRouter, Google Fonts (Poppins).
-
 **Status:** Project Setup Complete. Ready for feature development.
 
 ---
@@ -66,9 +64,7 @@ Each feature has its own folder. Work only in your assigned folder.
 2. Profile Page (features/profile):
    * Build UI based on design 6.png.
    * Link "Log Out" button to /login.
-3. Cart Page (features/cart):
-   * Build UI based on design 5.png.
-4. Splash Screen (features/splash):
+3. Splash Screen (features/splash):
    * Implement 3-second delay and logo.
 
 **Branch: feature/dashboard-nav (Lead)**
@@ -78,7 +74,9 @@ Each feature has its own folder. Work only in your assigned folder.
    * Implement Vertical Popular List.
 2. Items List (features/dashboard):
    * Create the "View All" items page.
-3. Navigation Bar (router):
+3. Cart Page (features/cart):
+   * Build UI based on design 5.png.
+4. Navigation Bar (router):
    * Finalize the Bottom Navigation Bar UI and routing logic.
 
 ---
