@@ -1,40 +1,23 @@
-# Project Plan: Beyond Blink Mobile App
+# 📱 Project: Beyond Blink Mobile App
 
-## Project Overview
+## 📋 Project Overview
 **Goal:** Convert "Beyond Blink" Figma/Canva designs into a Flutter Frontend APK.
+**Stack:** Flutter (Dart), GoRouter, Google Fonts.
 **Constraint:** No API, No Database. Frontend UI/UX focus only.
-**Deadlines:** (Insert your deadlines here)
 
 ---
 
-## Phase 1: Setup (DO THIS NOW)
-**Actor:** You (or Team Lead)
+## ⚡ Quick Start (For Developers)
 
-1.  **Create Flutter Project:**
-    * Open Terminal/Command Prompt.
-    * Run: `flutter create beyond_blink_app`
-    * *Best Practice:* Use snake_case for the project name.
+**1. Clone & Install**
+```bash
+git clone [https://github.com/iyawnnn/Beyond-Blink.git](https://github.com/iyawnnn/Beyond-Blink.git)
+cd Beyond-Blink
+flutter pub get
+```
 
-2.  **Prepare Assets:**
-    * Create a folder `assets/images/` in the root directory.
-    * Rename your image files to standard lowercase format:
-        * `logo_white.png` (was 1.png)
-        * `logo_blue_text.png` (was 2.png)
-        * `banner_glasses.png` (was 3.png)
-        * `sunglasses_black.png` (was 4.png)
-        * `profile_user.png` (was 6.png)
-    * Add `assets/` to your `pubspec.yaml` file.
-
-3.  **Initialize Git Repository:**
-    * Run `git init` inside the project folder.
-    * Create a repository on GitHub/GitLab.
-    * Link them: `git remote add origin <your-repo-link>`
-    * Push: `git push -u origin main`
-
-4.  **Invite Teammate:**
-    * Go to GitHub Settings > Collaborators > Add your teammate.
-
----
+**2. Run App**
+flutter run
 
 ## Phase 2: Architecture & Dependencies
 
@@ -45,8 +28,8 @@ To ensure the code is clean and scalable, we will use a **Feature-Based Folder S
 lib/
 ├── core/
 │   ├── assets/              # Asset paths
-│   ├── theme/               # AppColors, TextStyles (The Navy Blue Theme)
-│   └── constants.dart       # Strings
+│   ├── themes/               # AppColors, TextStyles (The Navy Blue Theme)
+│   └── constants/      # Strings
 ├── router/
 │   └── app_router.dart      # Navigation Logic (GoRouter)
 ├── features/
@@ -56,6 +39,7 @@ lib/
 │   ├── profile/             # User Profile
 │   └── splash/              # Initial Loading Screen
 └── main.dart
+```
 
 ### 2. Key Libraries (Add these to pubspec.yaml)
 * **`go_router`**: For handling navigation and routing (Best Practice).
