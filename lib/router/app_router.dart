@@ -28,7 +28,7 @@ final goRouter = GoRouter(
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
         return MainWrapper(navigationShell: navigationShell);
-      },
+      }, 
       branches: [
         // Branch 1: Home (Index 0)
         StatefulShellBranch(
