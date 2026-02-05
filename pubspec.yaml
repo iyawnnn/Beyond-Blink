@@ -62,7 +62,7 @@ flutter:
 
   # Uncommented and pointing to your folder
   assets:
-    - assets/images/
+    - lib/core/assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
