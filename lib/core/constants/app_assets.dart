@@ -1,10 +1,19 @@
 class AppAssets {
-  // Splash Screen Asset
-  static const String splashImage = 'assets/images/splash_image.png';
+  // Splash & Auth
+  static const String splashImage = 'lib/core/assets/images/splash_image.png';
+  static const String loginImage = 'lib/core/assets/images/login_screen.png';
+  static const String profileUser = 'lib/core/assets/images/profile.png';
 
-  // Login Screen Asset
-  static const String loginImage = 'assets/images/login_screen.png';
+  // Dashboard - Hero
+  static const String homeBanner = 'lib/core/assets/images/hero-glasses.png'; 
+  
+  // Dashboard - Categories
+  static const String catSunGlasses = 'lib/core/assets/images/sunglasses.png';
+  static const String catReadingGlasses = 'lib/core/assets/images/readingglasses.png';
+  static const String catScreenGlasses = 'lib/core/assets/images/screenglasses.png';
+  static const String catStyleFrames = 'lib/core/assets/images/styleframes.png';
 
-  // Profile Screen Asset
-  static const String profileUser = 'assets/images/profile.png';
+  // Dashboard - Popular Items (✅ NEW)
+  static const String popRayBan = 'lib/core/assets/images/rayban-sunglasses.png';
+  static const String popGucci = 'lib/core/assets/images/gucci-prescription.png';
 }
