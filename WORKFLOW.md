@@ -58,6 +58,30 @@ You own these files:
 * lib/router/app_router.dart
 * lib/features/cart/cart_screen.dart
 
+
+---
+
+
+## How to Submit Your Work (The PR Guide)
+
+When you are finished with your task, follow these steps to merge your code safely.
+
+### Step 1: Push Your Code
+In your terminal, run:
+   git push origin <your-branch-name>
+
+### Step 2: Create the Pull Request (GitHub)
+1. Go to the GitHub repository.
+2. Click the green **"Compare & pull request"** button.
+3. **CRITICAL STEP:** Check the dropdowns!
+   * **Base (Left):** `dev`  ⬅️  (The Destination)
+   * **Compare (Right):** `feature/...` ➡️ (Your Work)
+   * *Never select `main` as the base yet!*
+
+### Step 3: Notify the Lead
+* Send a message: "PR created for Login Screen."
+* The Lead (or you) will click "Merge Pull Request".
+
 ---
 
 ## Troubleshooting
