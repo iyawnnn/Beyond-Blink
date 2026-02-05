@@ -23,12 +23,12 @@ class _MainWrapperState extends State<MainWrapper> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: widget.navigationShell,
-      extendBody: true,
+      extendBody: true, // Essential for the floating look
       bottomNavigationBar: Container(
         margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
         decoration: BoxDecoration(
-          color: AppColors.primary, // Navy Blue Background
-          borderRadius: BorderRadius.circular(40),
+          color: AppColors.primary, // Navy Blue
+          borderRadius: BorderRadius.circular(40), // Pill Shape
           boxShadow: [
             BoxShadow(
               color: AppColors.primary.withOpacity(0.5),
@@ -42,18 +42,17 @@ class _MainWrapperState extends State<MainWrapper> {
           child: GNav(
             rippleColor: Colors.white.withOpacity(0.1),
             hoverColor: Colors.white.withOpacity(0.1),
-            gap: 0,
+            gap: 0, // Zero gap (No Text)
             iconSize: 26,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             duration: const Duration(milliseconds: 300),
-
-            // ----------------------------------------------------
-            // ✅ THE NEW "WHITE PILL" LOOK
-            // ----------------------------------------------------
-            tabBackgroundColor: Colors.white, // Active Background is Solid White
-            activeColor: AppColors.primary,   // Active Icon is Navy Blue (Contrast)
-            color: Colors.white.withOpacity(0.7), // Inactive Icons are faded White
-            // ----------------------------------------------------
+            
+            // Active Tab Style
+            tabBackgroundColor: Colors.white,
+            activeColor: AppColors.primary,
+            
+            // Inactive Tab Style
+            color: Colors.white.withOpacity(0.7),
 
             selectedIndex: widget.navigationShell.currentIndex,
             onTabChange: (index) => _goToBranch(index),
@@ -61,10 +60,10 @@ class _MainWrapperState extends State<MainWrapper> {
               // 1. Home
               GButton(icon: Icons.home_rounded),
 
-              // 2. Shop / Items (✅ CHANGED TO SHOPPING CART)
+              // 2. Collection / Shop (✅ CHANGED TO CART)
               GButton(icon: Icons.shopping_cart_rounded),
 
-              // 3. Cart / Bag
+              // 3. Cart / Bag (Kept as Bag to look different)
               GButton(icon: Icons.local_mall_outlined),
 
               // 4. Profile
