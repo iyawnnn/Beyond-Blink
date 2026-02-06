@@ -13,7 +13,8 @@ class AppAssets {
   static const String catScreenGlasses = 'lib/core/assets/images/screenglasses.png';
   static const String catStyleFrames = 'lib/core/assets/images/styleframes.png';
 
-  // Dashboard - Popular Items (✅ NEW)
+  // Dashboard - Popular Items
   static const String popRayBan = 'lib/core/assets/images/rayban-sunglasses.png';
   static const String popGucci = 'lib/core/assets/images/gucci-prescription.png';
+  static const String popPrada = 'lib/core/assets/images/prada-sunglasses.png';
 }
