@@ -21,17 +21,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
     {'name': "Style\nFrames", 'image': AppAssets.catStyleFrames},
   ];
 
-  // ✅ UPDATED: Only 2 Items, New Filenames
+  // ✅ UPDATED: Only 2 Items
   final List<Map<String, dynamic>> _popularItems = [
     {
       'name': "Ray-Ban Men's Black Wayfarer Sunglasses",
       'price': "\$1,234.56",
-      'image': AppAssets.popRayBan, // ✅ Uses the new constant
+      'image': AppAssets.popRayBan,
     },
     {
       'name': "Gucci Prescription Glasses",
       'price': "\$1,234.56",
-      'image': AppAssets.popGucci, // ✅ Uses the new constant
+      'image': AppAssets.popGucci,
     },
   ];
 
@@ -203,7 +203,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        // ✅ UPDATED: Empty function to prevent navigation errors
+                        onPressed: () {}, 
                         child: const Text("View All >"),
                       ),
                     ],
@@ -279,7 +280,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () => context.go('/dashboard/items'),
+                        onPressed: () {}, 
                         child: const Text("View All >"),
                       ),
                     ],
@@ -287,7 +288,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
                   const SizedBox(height: 15),
 
-                  // 5. Product Grid (Square, 2 Items, Large Images)
+                  // 5. Product Grid
                   GridView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
@@ -296,15 +297,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       crossAxisCount: 2,
                       crossAxisSpacing: 15,
                       mainAxisSpacing: 15,
-                      // ✅ UPDATED: 0.85 makes the card much closer to a square (less tall)
                       childAspectRatio: 0.85,
                     ),
                     itemBuilder: (context, index) {
                       final item = _popularItems[index];
                       return Container(
-                        padding: const EdgeInsets.all(
-                          10,
-                        ), // Reduced padding slightly for more image space
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
@@ -320,16 +318,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Image Section (Expanded to fill available space)
+                            // Image Section
                             Expanded(
-                              flex: 2, // Gives more weight to the image
+                              flex: 2,
                               child: Center(
                                 child: Image.asset(
                                   item['image'],
                                   fit: BoxFit.contain,
-                                  width: 140, // ✅ Force image larger
+                                  width: 140,
                                   errorBuilder: (context, error, stackTrace) {
-                                    // Fallback so app doesn't crash if new files aren't added yet
                                     return Icon(
                                       Icons.image_not_supported,
                                       size: 50,
@@ -400,8 +397,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       );
                     },
                   ),
-                  // ✅ REMOVED: const SizedBox(height: 100), to remove extra space
-                  const SizedBox(height: 20), // Add a small buffer just in case
+                  const SizedBox(height: 20),
                 ],
               ),
             ),

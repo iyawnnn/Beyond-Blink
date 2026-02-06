@@ -112,7 +112,7 @@ class _CartScreenState extends State<CartScreen> {
                           "Angeles City, Pampanga",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 14,
+                            fontSize: 10,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

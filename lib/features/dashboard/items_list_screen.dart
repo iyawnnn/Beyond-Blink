@@ -111,7 +111,7 @@ class _ItemsListScreenState extends State<ItemsListScreen> {
                   "Time to Frame up",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 32,
+                    fontSize: 24,
                     fontWeight: FontWeight.w900,
                     height: 1.1,
                   ),
