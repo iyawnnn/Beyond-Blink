@@ -203,7 +203,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         ),
                       ),
                       TextButton(
-                        // ✅ UPDATED: Empty function to prevent navigation errors
                         onPressed: () {}, 
                         child: const Text("View All >"),
                       ),
@@ -270,6 +269,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   // 4. Popular Items Header
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         "Popular",
@@ -280,16 +280,23 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         ),
                       ),
                       TextButton(
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: const Size(0, 0),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
                         onPressed: () {}, 
                         child: const Text("View All >"),
                       ),
                     ],
                   ),
 
-                  const SizedBox(height: 15),
+                  // ✅ FIXED: Added exactly 10px spacing (Small but visible)
+                  const SizedBox(height: 10),
 
                   // 5. Product Grid
                   GridView.builder(
+                    padding: EdgeInsets.zero, 
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: _popularItems.length,
@@ -397,7 +404,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       );
                     },
                   ),
-                  const SizedBox(height: 20),
+                  
+                  // ✅ UPDATED: Increased space below the cards from 20 to 40
+                  const SizedBox(height: 40),
                 ],
               ),
             ),
